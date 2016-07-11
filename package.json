@@ -1,5 +1,6 @@
 {
   "private": true,
+  "version": "1.0.0",
   "name": "conventional-changelog-whitelabel",
   "main": "index.js",
   "dependencies": {
