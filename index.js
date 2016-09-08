@@ -42,9 +42,9 @@ var writerOpts = {
       discard = false;
     });
 
-    if (commit.type === 'feat') {
+    if (commit.type === 'feat' || commit.type === 'feature') {
       commit.type = 'Features';
-    } else if (commit.type === 'fix') {
+    } else if (commit.type === 'fix' || commit.type === 'bugfix') {
       commit.type = 'Bug Fixes';
     } else if (commit.type === 'perf') {
       commit.type = 'Performance Improvements';
