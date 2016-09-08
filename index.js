@@ -29,6 +29,8 @@ var parserOpts = {
   ]
 };
 
+var entries = {};
+
 var writerOpts = {
 
   transform: function (commit) {
@@ -68,6 +70,16 @@ var writerOpts = {
 
     if (typeof commit.hash === 'string') {
       commit.hash = commit.hash.substring(0, 7);
+    }
+
+    commit.hashes = [commit.hash];
+
+    // Group commits by subject
+    if (commit.subject in entries) {
+      entries[commit.subject].hashes.push(commit.hash);
+      return false;
+    } else {
+      entries[commit.subject] = commit;
     }
 
     return commit;
