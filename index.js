@@ -13,8 +13,9 @@ try {
 }
 
 var parserOpts = {
-  headerPattern: /^\[(.+)\] (\w*)(?:\((.*)\))?\: (.*)$/,
+  headerPattern: /^(\[(.+)\])*\s*(\w*)(?:\((.*)\))?\: (.*)$/,
   headerCorrespondence: [
+    'ticketBracket',
     'ticket',
     'type',
     'scope',
